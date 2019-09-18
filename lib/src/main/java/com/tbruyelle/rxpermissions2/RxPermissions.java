@@ -23,15 +23,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.functions.Function;
 import io.reactivex.subjects.PublishSubject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RxPermissions {
 
@@ -74,7 +73,7 @@ public class RxPermissions {
             fragmentManager
                     .beginTransaction()
                     .add(rxPermissionsFragment, TAG)
-                    .commitNow();
+                    .commitNowAllowingStateLoss();
         }
         return rxPermissionsFragment;
     }
